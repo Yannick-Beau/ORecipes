@@ -29,6 +29,5 @@ Header.propTypes = {
   difficulty: PropTypes.string.isRequired,
 };
 
-
 // == Export
 export default Header;
