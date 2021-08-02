@@ -32,6 +32,5 @@ Ingredients.propTypes = {
   ).isRequired,
 };
 
-
 // == Export
 export default Ingredients;
