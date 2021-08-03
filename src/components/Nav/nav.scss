@@ -1,0 +1,24 @@
+@use 'src/styles/vars';
+
+.nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: vars.$navWidth;
+  border-right: 4px solid vars.$titleColor;
+  background-color: rgb(236, 232, 223);
+
+  .nav-item {
+    display: block;
+    color: #222;
+    margin: 1em 1.5em;
+
+    &:hover {
+      color: #777;
+    }
+
+    &.nav-item--active {
+      color: vars.$mainColor;
+    }
+  }
+}

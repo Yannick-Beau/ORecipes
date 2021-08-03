@@ -1,0 +1,45 @@
+@use 'src/styles/vars';
+
+.home {
+  .recipes-small {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+
+    .recipe-small {
+      width: 300px;
+      margin: 2em;
+      border: 1px solid #ccc;
+      border-radius: 1em;
+      // on cache ce qui dépasse => ne pas avoir l'image qui dépasse sur
+      // les bords par rapport à l'arrondi
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+
+      .recipe-small-content {
+        padding: 1em;
+
+        h2 {
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+
+        p {
+          margin-top: 0.2em;
+          margin-bottom: 0.2em;
+        }
+
+        .recipe-small-link {
+          color: vars.$mainColor;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

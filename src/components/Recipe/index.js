@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
 // == Import : local
 // Composants
@@ -10,9 +11,12 @@ import Instructions from './Instructions';
 
 // Style
 import './styles.css';
+import { slugifyTitle } from '../../utils';
 
 // == Composant
-function Recipe({ recipe }) {
+function Recipe({ recipes }) {
+  const { slug } = useParams();
+  const recipe = recipes.find((item) => slugifyTitle(item.title) === slug);
   return (
     <div className="recipe">
       <Header
@@ -32,14 +36,16 @@ function Recipe({ recipe }) {
 }
 
 Recipe.propTypes = {
-  recipe: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    difficulty: PropTypes.string.isRequired,
-    ingredients: PropTypes.array.isRequired,
-    instructions: PropTypes.array.isRequired,
-  }).isRequired,
+  recipes: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      difficulty: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+      instructions: PropTypes.array.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 // == Export

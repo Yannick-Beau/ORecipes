@@ -1,0 +1,18 @@
+@use 'src/styles/vars';
+
+.page {
+  padding-left: vars.$navWidth;
+
+  .page-title {
+    background-color: vars.$titleColor;
+    color: #222;
+    padding: 1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page-content {
+    padding: 1em;
+  }
+}
