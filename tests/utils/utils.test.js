@@ -1,7 +1,10 @@
 // fichier de tests pour src/utils/index.js
 
 // on importe ce qu'on veut tester
-import { slugifyTitle } from 'src/utils';
+import { slugifyTitle, getRecipeBySlug } from 'src/utils';
+
+// on importe les données de test
+import recipesData from './recipes';
 
 // on importe l'une des syntaxes de chai
 import { should } from 'chai';
@@ -40,5 +43,15 @@ describe('utils', () => {
 
   describe('getRecipeBySlug', () => {
     // ici les tests de la fonction getRecipeBySlug
+    it('is a function', () => {
+      // on veut vérifier que slugifyTitle est bien une fonction
+      getRecipeBySlug.should.be.a('function');
+    });
+
+    it('get the recipe with the given slug', () => {
+      // on calcule le slug de l'une des recettes (soit slugifyTitle, soit on fait nous même)
+      const slug = slugifyTitle(recipesData[2].title);
+      getRecipeBySlug(slug, recipesData).should.equal(recipesData[2]);
+    });
   });
 });
