@@ -3,13 +3,17 @@
 .page {
   padding-left: vars.$navWidth;
 
-  .page-title {
+  .header {
     background-color: vars.$titleColor;
-    color: #222;
-    padding: 1em;
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .page-title {
+      color: #222;
+      padding: 1em;
+      font-weight: bold;
+    }
   }
 
   .page-content {

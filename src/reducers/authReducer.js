@@ -6,6 +6,7 @@ const initialState = {
   username: '',
   isLogged: false,
   loggedMessage: 'Déconnecté',
+  token: '',
 };
 
 function authReducer(state = initialState, action = {}) {
@@ -34,6 +35,7 @@ function authReducer(state = initialState, action = {}) {
         isLogged: true,
         email: '',
         password: '',
+        token: action.token,
       };
 
     case LOGOUT:

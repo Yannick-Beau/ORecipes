@@ -3,16 +3,13 @@ import { Route } from 'react-router-dom';
 
 import Recipe from 'src/containers/Recipe';
 import Home from 'src/containers/Home';
-import LoginForm from 'src/containers/LoginForm';
+import Header from './Header';
 
 import './page.scss';
 
 const Page = () => (
   <main className="page">
-    <h2 className="page-title">
-      oRecipes
-      <LoginForm />
-    </h2>
+    <Header />
     <div className="page-content">
       <Route path="/" exact>
         <Home />

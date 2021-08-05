@@ -18,7 +18,8 @@ export const logout = () => ({
   type: LOGOUT,
 });
 
-export const connectUser = (username) => ({
+export const connectUser = (username, token) => ({
   type: CONNECT_USER,
   username: username,
+  token: token,
 });
